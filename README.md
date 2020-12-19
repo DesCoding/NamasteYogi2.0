@@ -42,3 +42,12 @@ Essential Oil recommendations
 Music playlists
 Visual queues for breath
 Anatomy graphics or clickable image for users to choose focus areas or symptoms. 
+
+Next steps:
+
+Search textbox for zipcode/user input stored to local storage
+
+search textbox for poses and save to local storage
+
+fix repo issues
+

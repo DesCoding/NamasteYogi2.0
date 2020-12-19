@@ -2,25 +2,36 @@ var youTubeAPI = "AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8"
 // CHANGES
 var yelpLocationAPI = "BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
 
-$.ajax({
-    url: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=' + 'Yoga Studio' + '&location=63117',
-    headers: {
-        "Authorization": "Bearer BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
-    },
-    success: function(result) {
-        console.log(result)
-    }
-});
+function findStudioNearYou(location){
+    $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=' + 'Yoga Studio' + '&location=' + location,
+        headers: {
+            "Authorization": "Bearer BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
+        },
+        success: function(result) {
+            console.log(result)
+        var yogaBusiness = result.businesses[0].name
+        $(".yogaStudio").html(yogaBusiness)
 
-$.ajax({
-    url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + 'userInput' + "&key=AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8",
+        }
+    });
+}
+//change this to get zipcode from user input. 
+var zipcode = "01073"
+findStudioNearYou(zipcode);
 
-    success: function(result) {
-        console.log(result)
-    }
-});
+function findYogaVideo(userVideoSearch){
+    $.ajax({
+        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + userVideoSearch + "&key=AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8",
 
-
+        success: function(result) {
+            console.log(result)
+        }
+    });
+}
+//change this to get search term from user text box
+var userVideoInput = "childs"
+findYogaVideo(userVideoInput);
 
            //     / Event listener for btn-primary
             //     $(".btn-primary").on("click", function() {
