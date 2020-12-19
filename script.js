@@ -33,6 +33,8 @@ function findYogaVideo(userVideoSearch){
 var userVideoInput = "childs"
 findYogaVideo(userVideoInput);
 
+
+
            //     / Event listener for btn-primary
             //     $(".btn-primary").on("click", function() {
             //     // Assigning a variable for userSearch
@@ -51,3 +53,15 @@ findYogaVideo(userVideoInput);
             //             console.log(results);
             //         });
             // });
+            // $.ajax({
+            //     url: queryURL,
+            //     method: "GET"
+            //     //.then promises to retun the function (in this API) and captures the response
+            //    }).then(function (response) {
+            //        console.log("response: ", response);
+           
+            //        //displayFiveDayForecast(response);
+            //        for (var i = 3; i < response.list.length; i = i+8){
+            //        displayFiveDayForecast(response.list[i], response.list[i].dt_txt)
+            //        }
+            //    });

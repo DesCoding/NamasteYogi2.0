@@ -45,9 +45,19 @@ Anatomy graphics or clickable image for users to choose focus areas or symptoms.
 
 Next steps:
 
-Search textbox for zipcode/user input stored to local storage
+        Search textbox for zipcode/user input stored to local storage
 
-search textbox for poses and save to local storage
+        search textbox for poses and save to local storage
 
-fix repo issues
+        fix repo issues
+
+        fix navbar issue
+
+        API details - format a placeholders for address for each yoga stuido response to go
+
+        format placeholders for yoga videos to go
+
+        meditation screen center the youtube video
+
+        on index, make sure buttons and fix the hamburger menu - add links to span.
 
