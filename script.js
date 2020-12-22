@@ -23,15 +23,23 @@ findStudioNearYou(zipcode);
 function findYogaVideo(userVideoSearch){
     $.ajax({
         url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + userVideoSearch + "&key=AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8",
-
+//add iframe to capture API feed of pose video from youtube
         success: function(result) {
+            var poseId = result.items[0].id.videoId;
             console.log(result)
+            //create iframe el and append variable to grab data and append to my studio dom
+            var iframeEl = $("<iframe>").attr("src","https://www.youtube.com/embed/" + poseId)
+            $(".posePlaceholder").append(iframeEl)
+
+            
+
         }
     });
 }
 //change this to get search term from user text box
-var userVideoInput = "childs"
+var userVideoInput = "warrior pose"
 findYogaVideo(userVideoInput);
+
 
 
 

@@ -45,15 +45,17 @@ Anatomy graphics or clickable image for users to choose focus areas or symptoms.
 
 Next steps:
 
-        Search textbox for zipcode/user input stored to local storage
+        Search textbox for zipcode/user input stored to local storage (find studio near me option)
 
-        search textbox for poses and save to local storage
+        search textbox for poses and save to local storage (pose linked to youtube)
 
-        fix repo issues
+        
 
-        fix navbar issue
+        fix repo issues (done)
 
-        API details - format a placeholders for address for each yoga stuido response to go
+        fix navbar issue (done)
+
+        API details - format a placeholders for address for each yoga stuido response to go 
 
         format placeholders for yoga videos to go
 
