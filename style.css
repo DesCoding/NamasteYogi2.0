@@ -1,8 +1,21 @@
+/* Universal body tag */
+
 body {
-    background-image: url("https://user-images.githubusercontent.com/72481828/102695578-e0d45b00-41ed-11eb-8d58-e916cf6b5ee4.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
 
+
+/* Page specific body tags */
+
+#homePage {
+    background-image: url("./Assets/homepage_background.jpg");
+}
+
+#meditationPage,
+#mystudioPage {
+    background-image: url("./Assets/mystudio_background.jpg");
+    /* background-image: url("./Assets/meditation_background.jpg"); -- Potential alternate background for meditation page */
+}
