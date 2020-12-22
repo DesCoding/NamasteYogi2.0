@@ -44,14 +44,25 @@
 
     <div class="field">
         <div class="control">
-             <!--add button and link to on-click-->
+             <!--add button and link to on-click for poses-->
             <input class="input is-warning" type="text" id="userSearch" placeholder="Enter the yoga pose you'd like to try today...">
         <button type="button" class="btn-primary">Search</button>
         </div>
     </div>
 
+    <div class="field2">
+        <div class="control2">
+             <!--add button and link to on-click for search by zip code-->
+            <input class="input is-warning" type="text" id="zipSearch" placeholder="Enter zipcode to find a studio near you!">
+        <button type="button" class="btn-zip">Search</button>
+        </div>
+    </div>
+
     <!--update w/ youtube API poses-->
     <div class="posePlaceholder"></div>
+    <!--update w/ yelp API locations-->
+    <div class="zipPlaceholder"></div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
