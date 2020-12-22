@@ -30,18 +30,19 @@ function findYogaVideo(userVideoSearch){
             //create iframe el and append variable to grab data and append to my studio dom
             var iframeEl = $("<iframe>").attr("src","https://www.youtube.com/embed/" + poseId)
             $(".posePlaceholder").append(iframeEl)
-
-            
-
         }
     });
 }
-//change this to get search term from user text box
-var userVideoInput = "warrior pose"
-findYogaVideo(userVideoInput);
+// //change this to get search term from user text box
+// var userVideoInput = "warrior pose"
+// findYogaVideo(userVideoInput);
 
+$(".btn-primary").on("click", function() {
+var userSearch = $("#userSearch").val();
+findYogaVideo(userSearch)
+})
 
-
+//create a save button and save to local storage
 
            //     / Event listener for btn-primary
             //     $(".btn-primary").on("click", function() {
@@ -72,4 +73,4 @@ findYogaVideo(userVideoInput);
             //        for (var i = 3; i < response.list.length; i = i+8){
             //        displayFiveDayForecast(response.list[i], response.list[i].dt_txt)
             //        }
-            //    });
+            //    })
