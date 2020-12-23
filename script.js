@@ -1,8 +1,12 @@
 var youTubeAPI = "AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8"
 
+var youTubeAPI2 = 'AIzaSyB3X71cc_7KgW_lj5Djfybf7PiGT0-LGAw'
+
+var youTubeAPITera = 'AIzaSyDkn-xiKVHlJxh8LyojlnPzgwutJlly5yY'
+
 function findYogaVideo(userVideoSearch){
     $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + userVideoSearch + "&key=AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8",
+        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + userVideoSearch + "&key=" + youTubeAPITera,
 //add iframe to capture API feed of pose video from youtube
         success: function(result) {
             var poseId = result.items[0].id.videoId;
