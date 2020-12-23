@@ -4,15 +4,15 @@ var youTubeAPI2 = 'AIzaSyB3X71cc_7KgW_lj5Djfybf7PiGT0-LGAw'
 
 var youTubeAPITera = 'AIzaSyDkn-xiKVHlJxh8LyojlnPzgwutJlly5yY'
 
-function findYogaVideo(userVideoSearch){
+function findYogaVideo(userVideoSearch) {
     $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + userVideoSearch + "&key=" + youTubeAPITera,
-//add iframe to capture API feed of pose video from youtube
+        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + userVideoSearch + " yoga" + "&key=" + youTubeAPITera,
+        //add iframe to capture API feed of pose video from youtube
         success: function(result) {
             var poseId = result.items[0].id.videoId;
             console.log(result)
-            //create iframe el and append variable to grab data and append to my studio dom
-            var iframeEl = $("<iframe>").attr("src","https://www.youtube.com/embed/" + poseId)
+                //create iframe el and append variable to grab data and append to my studio dom
+            var iframeEl = $("<iframe>").attr("src", "https://www.youtube.com/embed/" + poseId)
             $(".posePlaceholder").prepend(iframeEl)
         }
     });
@@ -25,50 +25,53 @@ function findYogaVideo(userVideoSearch){
 $(".btn-primary").on("click", function() {
     var userSearch = $("#userSearch").val();
     findYogaVideo(userSearch)
-    })
+})
 
 var poseArray = [".userPoses"]
-function savePosesToArray(object) {
-        if (poseArray.includes(object.name)) {
-            console.log("Pose name already selected");
-            return;
-        } else {
-            poseArray.push(object.name);
-            storedPoses();
-        };
-    };
 
-var savedPoses = "savedPoses" 
+function savePosesToArray(object) {
+    if (poseArray.includes(object.name)) {
+        console.log("Pose name already selected");
+        return;
+    } else {
+        poseArray.push(object.name);
+        storedPoses();
+    };
+};
+
+var savedPoses = "savedPoses"
+
 function storedPoses() {
     localStorage.setItem("savedPoses", JSON.stringify(posesArray));
-    };
-    
-    function displayStoredposes() {
+};
+
+function displayStoredposes() {
     var storedPoses = JSON.parse(localStorage.getItem("savedPoses"));
 
     if (storedPoses != null) {
         posesArray = storedPoses;
     };
 };
-    function generateButtons(){
+
+function generateButtons() {
 
     var btnGroup = $(".button-group");
     btnGroup.empty();
     displayStoredposes();
-    
+
     posesArray.forEach(element => {
         var poseBtn = $("<button type='button' class='city-btn btn btn-dark btn-lg btn-block'>");
         poseBtn.text(element);
         btnGroup.append(poseBtn);
         console.log("Pose: " + element);
         console.log(poseBtn);
-        });
-    };
-    
+    });
+};
+
 
 var yelpLocationAPI = "BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
 
-function findStudioNearYou(location){
+function findStudioNearYou(location) {
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=Yoga Studio&location=' + location + '&sort_by=distance',
         headers: {
@@ -76,13 +79,13 @@ function findStudioNearYou(location){
         },
 
         success: function(result) {
-        console.log(result)
-        var yogaBusiness = result.businesses[0].name
-        var yogaBusPhone = result.businesses[0].display_phone
-        var yogaBusAddress = result.businesses[0].location.address1
-        $(".businessName").html(yogaBusiness);
-        $(".phonenumber").html(yogaBusPhone);
-        $(".address").html(yogaBusAddress);
+            console.log(result)
+            var yogaBusiness = result.businesses[0].name
+            var yogaBusPhone = result.businesses[0].display_phone
+            var yogaBusAddress = result.businesses[0].location.address1
+            $(".businessName").html(yogaBusiness);
+            $(".phonenumber").html(yogaBusPhone);
+            $(".address").html(yogaBusAddress);
         }
     });
 }
@@ -94,5 +97,4 @@ function findStudioNearYou(location){
 $(".btn-zip").on("click", function() {
     var zipSearch = $("#zipSearch").val();
     findStudioNearYou(zipSearch)
-    })
-
+})
