@@ -51,7 +51,6 @@ displayStoredposes()
     };
 
     function displayStoredposes() {
-        console.log('pizza')
         var storedPoses = JSON.parse(localStorage.getItem("savedPoses"));
 
         if (storedPoses != null) {
