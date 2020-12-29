@@ -21,7 +21,7 @@ body {
 
 .hero.is-black {
     /* Setting navbar to be partially transparent */
-    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 #userSearch {
@@ -42,9 +42,10 @@ body {
 }
 
 .song {
-    text-align:center;
-    width:100%;
-    }
-    iframe{
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
     width: 200px;
 }
