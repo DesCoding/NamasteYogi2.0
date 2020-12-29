@@ -37,39 +37,46 @@
             </nav>
         </div>
     </section>
-    <p class="yogaStudio"></p>
 
-    <div class="field">
-        <div class="control">
-            <!--add button and link to on-click for poses-->
-            <input class="input is-warning" type="text" id="userSearch" placeholder="Enter the yoga pose you'd like to try today...">
-            <button type="button" class="button btn-poses">Search</button>
+    <div class="container">
+        <!-- Columns for Yoga Poses Section -->
+        <div class="columns my-6">
+            <div class="column">
+                <div class="field">
+                    <div class="control">
+                        <!--add button and link to on-click for poses-->
+                        <input class="input is-warning" type="text" id="userSearch" placeholder="Enter the yoga pose you'd like to try today...">
+                        <button type="button" class="button btn-poses">Search</button>
+                    </div>
+                </div>
+                <div class="userPoses">
+                    <div class="button-group"></div>
+                </div>
+            </div>
+            <div class="column">
+                <!--update w/ youtube API poses-->
+                <div class="posePlaceholder"></div>
+            </div>
+        </div>
+        <!-- Columns for Studio Search Section -->
+        <div class="columns my-6">
+            <div class="column">
+                <div class="field2">
+                    <div class="control2">
+                        <!--add button and link to on-click for search by zip code-->
+                        <input class="input is-warning" type="text" id="zipSearch" placeholder="Enter zipcode to find a studio near you!">
+                        <button type="button" class="button btn-zip">Search</button>
+                    </div>
+                </div>
+                <!--update w/ yelp API locations-->
+                <div class="zipPlaceholder">
+                    <div class="businessName"></div>
+                    <div class="phonenumber"></div>
+                    <div class="address"></div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="field2">
-        <div class="control2">
-            <!--add button and link to on-click for search by zip code-->
-            <input class="input is-warning" type="text" id="zipSearch" placeholder="Enter zipcode to find a studio near you!">
-            <button type="button" class="button btn-zip">Search</button>
-        </div>
-    </div>
-
-    <!--update w/ youtube API poses-->
-    <div class="posePlaceholder"></div>
-    <div class="userPoses">
-        <div class="button-group"></div>
-
-    </div>
-
-
-    <!--update w/ yelp API locations-->
-    <div class="zipPlaceholder">
-        <div class="businessName"></div>
-        <div class="phonenumber"></div>
-        <div class="address"></div>
-    </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
