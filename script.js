@@ -31,7 +31,7 @@ $(document).ready(function() {
                 var poseId = result.items[0].id.videoId;
                 console.log(result)
                     //create iframe el and append variable to grab data and append to my studio dom
-                var iframeEl = $("<iframe>").attr("src", "https://www.youtube.com/embed/" + poseId)
+                var iframeEl = $("<iframe>").attr("src", "https://www.youtube.com/embed/" + poseId).addClass("videoiFrame")
                 $(".posePlaceholder").prepend(iframeEl)
             }
         });
