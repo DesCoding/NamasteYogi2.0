@@ -40,15 +40,6 @@ body {
     padding: 10px;
 }
 
-.song {
-    text-align: center;
-    width: 100%;
-}
-
-iframe {
-    width: 200px;
-}
-
 .posePlaceholder {
     position: relative;
     overflow: hidden;
