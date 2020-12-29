@@ -74,11 +74,11 @@ $(document).ready(function() {
 
     function generateButtons(posesArray) {
 
-        var btnGroup = $(".button-group");
+        var btnGroup = $(".buttons");
         btnGroup.empty();
 
         posesArray.forEach((element) => {
-            var poseBtn = $("<button type='button' class='city-btn btn btn-dark btn-lg btn-block'>");
+            var poseBtn = $("<button type='button' class='button is-warning is-light'>");
             poseBtn.text(element);
             btnGroup.prepend(poseBtn);
             console.log(btnGroup)
@@ -101,7 +101,8 @@ $(document).ready(function() {
                 console.log(result)
                 var yogaBusiness = result.businesses[0].name
                 var yogaBusPhone = result.businesses[0].display_phone
-                var yogaBusAddress = result.businesses[0].location.address1
+                var yogaBusAddress = result.businesses[0].location.display_address[0] + "<br>" + result.businesses[0].location.display_address[1]
+                $(".zipPlaceholder").removeClass("is-hidden");
                 $(".businessName").html(yogaBusiness);
                 $(".phonenumber").html(yogaBusPhone);
                 $(".address").html(yogaBusAddress);
@@ -115,6 +116,9 @@ $(document).ready(function() {
     //button for yoga studio location search w/ zippcode
     $(".btn-zip").on("click", function() {
         var zipSearch = $("#zipSearch").val();
-        findStudioNearYou(zipSearch)
+        $(".zipPlaceholder").addClass("is-hidden");
+        findStudioNearYou(zipSearch);
+        // Clearing the input field so it is ready for the next search
+        $("#zipSearch").val("");
     })
 })
