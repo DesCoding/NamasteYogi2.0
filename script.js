@@ -1,5 +1,11 @@
 $(document).ready(function() {
-    displayStoredposes()
+    // Retreiving items from local storage and assigning it to a variable poseArray
+    var poseArray = JSON.parse(localStorage.getItem("savedPoses"));
+    if (poseArray === null) {
+        poseArray = [];
+    }
+
+    displayStoredposes();
 
     // NEEDED FOR BURGER MENU TO OPERATE.  Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
@@ -35,18 +41,19 @@ $(document).ready(function() {
     // findYogaVideo(userVideoInput);
 
     //button for yoga pose api data search - this is working! :)
-    $(".btn-primary").on("click", function() {
+    $(".btn-poses").on("click", function() {
         var userSearch = $("#userSearch").val();
         findYogaVideo(userSearch)
         savePosesToArray(userSearch);
-        generateButtons();
+        generateButtons(poseArray);
+        // Clearing the input field so it is ready for the next search
+        $("#userSearch").val("");
     })
-
-    var poseArray = []
 
     function savePosesToArray(userSearch) {
         console.log("savePosesToArray")
         if (poseArray.includes(userSearch)) {
+            // DO WE WANT THIS TO REMAIN AS ONLY CONSOLE LOGGING OR DO WE WANT IT SHOWN TO THE USER?
             console.log("Pose name already selected");
             return;
         } else {
@@ -60,10 +67,8 @@ $(document).ready(function() {
     };
 
     function displayStoredposes() {
-        var storedPoses = JSON.parse(localStorage.getItem("savedPoses"));
-
-        if (storedPoses != null) {
-            generateButtons(storedPoses);
+        if (poseArray != []) {
+            generateButtons(poseArray);
         };
     };
 
@@ -72,12 +77,13 @@ $(document).ready(function() {
         var btnGroup = $(".button-group");
         btnGroup.empty();
 
-        posesArray.forEach(element => {
+        posesArray.forEach((element) => {
             var poseBtn = $("<button type='button' class='city-btn btn btn-dark btn-lg btn-block'>");
             poseBtn.text(element);
-            btnGroup.append(poseBtn);
+            btnGroup.prepend(poseBtn);
             console.log(btnGroup)
         });
+
         $('.userPoses').html(btnGroup)
     };
 
@@ -106,7 +112,7 @@ $(document).ready(function() {
     // var zipcode = "01073"
     // findStudioNearYou(zipcode);
 
-    //button for yoga studio location search w/ zippcode - not working right
+    //button for yoga studio location search w/ zippcode
     $(".btn-zip").on("click", function() {
         var zipSearch = $("#zipSearch").val();
         findStudioNearYou(zipSearch)
