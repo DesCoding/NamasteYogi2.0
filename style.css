@@ -1,6 +1,5 @@
-/* Universal body tag */
-
 body {
+    /* Universal body tag for background images */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -19,12 +18,17 @@ body {
     background-image: url("./Assets/mystudio_background.jpg");
     /* background-image: url("./Assets/meditation_background.jpg"); -- Potential alternate background for meditation page */
 }
+
+.hero.is-black {
+    /* Setting navbar to be partially transparent */
+    opacity: 0.8;
+}
+
 #userSearch {
     width: 432px;
 }
 
-.btn-primary {
-}
+.btn-primary {}
 
 #zipSearch {
     width: 432px;
@@ -36,6 +40,7 @@ body {
     background-color: black;
     display: inline-block;
 }
+
 .song {
     justify-content: center;
 }

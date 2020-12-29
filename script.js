@@ -1,5 +1,14 @@
-$(document).ready(function(){
-displayStoredposes()
+$(document).ready(function() {
+    displayStoredposes()
+
+    // NEEDED FOR BURGER MENU TO OPERATE.  Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function() {
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+
+    });
 
 
     var youTubeAPI = "AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8"
@@ -45,7 +54,7 @@ displayStoredposes()
             storedPoses();
         };
     };
-        
+
     function storedPoses() {
         localStorage.setItem("savedPoses", JSON.stringify(poseArray));
     };
@@ -70,8 +79,8 @@ displayStoredposes()
             console.log(btnGroup)
         });
         $('.userPoses').html(btnGroup)
-    }; 
- 
+    };
+
 
     var yelpLocationAPI = "BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
 
@@ -101,5 +110,5 @@ displayStoredposes()
     $(".btn-zip").on("click", function() {
         var zipSearch = $("#zipSearch").val();
         findStudioNearYou(zipSearch)
-})
+    })
 })
