@@ -37,5 +37,9 @@ body {
     display: inline-block;
 }
 .song {
-    justify-content: center;
+    text-align:center;
+    width:100%;
+    }
+    iframe{
+    width: 200px;
 }
