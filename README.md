@@ -1,70 +1,33 @@
 # NamasteYogi
 
-Notes about the project:
+Are you busy, stressed, overwehelmed...maybe you're just looking for a few zen moments?  NamasteYogi, we see you.  With this app, you can cultivate a yoga and meditation practice all your own.  Click the type of zen you need today - yoga or meditaiton.  On your yoga studio page, you can search poses to pracitce and even save the poses you like!  If you prefer to practice in studio, enter your zip code in the applicable search box and get your practice on!  If you crave stillness and healing vibrations, click meditation and enjoy the healing vibs of our musical offering.  
 
-Objective: Create a yoga app that offers clients mini yoga breaks and breath reminders. Zen moments for the busy overwhelmed yogi.
+# Technologies Used
 
-User Story: NamasteYogi provides customizable Zen Moments where users will take time to be present, create focus and strength through hatha yoga postures, meditation, and breathing techniques.
+	* Application uses two server-side APIs - Yelp and youTube.
 
-NamasteYogi is for the yogi who has just a little too much on thier to do list.  Clients input problem areas or share how they are feeling, the app offers yoga postures, meditation, and/or breath work easily incorporated into each day.  
+    * Application uses client-side storage to store persistent data.
 
-Postures:  Create arrays of poses that correlate with each body section/part.
+    * Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
 
-Mediation:  Breath work (visual ques), relaxing music playlist.
+    * Application uses a CSS framework other than Bootstrap - BULMA.
 
-
-API Options - 
-
-Free music: https://www.last.fm/api/show/track.search
-
-Good source for photos and backgrounds:  Motionarray.com
+    * Application is interactive (accepts and responds to user input of poses and zip code)
 
 
- youtube yoga with Adriene with timed flows and problem area focused flows:  https://www.youtube.com/user/yogawithadriene
+# Deployment
 
-Visual Setup:
+Deployed Site - https://descoding.github.io/NamasteYogi2.0/
 
-Home page:  with welcome  message and buttons
+GitHub Repo - https://github.com/DesCoding/NamasteYogi2.0
 
-Meditation page:  Music (free fm API) and center candle
 
-Your Practice:  yoga studio search (yelp API) and possibly yoga videos if we have time
-
-Upon opening the page, users will see a soothing background, lotus flower upon opening (fades out after 3 seconds) a heading that says.  "Welcome, Namaste Yogi.  Click below to choose your zen.".  Three buttons will be available on the home page.  User can choose either yoga poses, meditation, or my studio. 
-
-When user clicks icon of poses, video pops up, user has an option to save favorite poses to "my studio".
-
-Future Development Ideas:
-Meditation
-Anatomy Model w/ clickable body areas
-Zen Moments could be categorized by body part - music, poses and meditation will be linked to an anatomy model (maybe) with buttons to correlate with all the date.
-Essential Oil recommendations
-Music playlists
-Visual queues for breath
-Anatomy graphics or clickable image for users to choose focus areas or symptoms. 
-
-Next steps:
-
-        Search textbox for zipcode/user input stored to local storage (find studio near me option)
-
-        search textbox for poses and save to local storage (pose linked to youtube)
-
-        
-        fix repo issues (done)
-
-        fix navbar issue (done)
-
-        API details - format a placeholders for address for each yoga stuido response to go 
-
-        format placeholders for yoga videos to go
-
-        meditation screen center the youtube video
-
-        on index, make sure buttons and fix the hamburger menu - add links to span.
+# Demo
+[media-demo](Assets/DemoPic.png)
 
 
 
-# Project 1 WUSTL Details:
+# Project 1 WUSTL Details - DELETE THIS SECTION BEFORE SUBMITTAL:
 
 ## Application Requirements
 
