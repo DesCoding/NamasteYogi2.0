@@ -1,6 +1,6 @@
 # NamasteYogi
 
-Are you busy, stressed, overwehelmed...maybe you're just looking for a few zen moments?  NamasteYogi, we see you.  With this app, you can cultivate a yoga and meditation practice all your own.  Click the type of zen you need today - yoga or meditaiton.  On your yoga studio page, you can search poses to pracitce and even save the poses you like!  If you prefer to practice in studio, enter your zip code in the applicable search box and get your practice on!  If you crave stillness and healing vibrations, click meditation and enjoy the healing vibs of our musical offering.  
+Are you busy, stressed...maybe you're just looking for a few zen moments?  NamasteYogi, we see you.  With this app, you can cultivate a yoga and meditation practice all your own.  Choose the type of zen you need today - yoga or meditation.  Choose yoga from the home menu to search for poses to practice and even save the poses you like!  If you prefer to practice in studio, enter your zip code in the applicable search box and get your practice on!  If you crave stillness and healing vibrations, choose meditation and enjoy the healing vibes of our musical offering.  
 
 # Technologies Used
 
@@ -23,6 +23,7 @@ GitHub Repo - https://github.com/DesCoding/NamasteYogi2.0
 
 
 # Demo
+
 [media-demo](Assets/DemoPic.png)
 
 
