@@ -24,7 +24,7 @@ GitHub Repo - https://github.com/DesCoding/NamasteYogi2.0
 
 # Demo
 
-[media-demo](Assets/DemoPic.png)
+[media](Assets/DemoPic.png)
 
 
 
