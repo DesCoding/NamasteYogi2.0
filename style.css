@@ -3,12 +3,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
-   
-}
-
-html {
-     background-color: orange;
+    height: 100vh; 
 }
 
 /* Page specific body tags */
@@ -20,34 +15,21 @@ html {
 #meditationPage,
 #mystudioPage {
     background-image: url("./Assets/mystudio_background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+
     /* background-image: url("./Assets/meditation_background.jpg"); -- Potential alternate background for meditation page */
 }
 
-.hero.is-black {
+.hero.is-black .html {
     /* Setting navbar to be partially transparent */
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* .btn-poses {
-    float: right;
-} */
-
 #userSearch {
     width: 432px;
-    /* float:right; */
 }
-
-/* .btn-zip {
-    float: right;
-} */
 
 #zipSearch {
     width: 432px;
-    float: right;
 }
 
 .zipPlaceholder {
@@ -68,8 +50,7 @@ html {
 }
 
 
-/* Then style the iframe to fit in the container div with full height and width */
-
+/* Style the iframe to fit in the container div with full height and width */
 .videoiFrame {
     position: absolute;
     top: 0;
@@ -81,10 +62,12 @@ html {
 }
 
 .meditation {
-    background-color: rgb(209, 203, 121);
+    background-color: rgb(3, 3, 2);
     text-emphasis: bold;
     border-style: solid;
-    border-color: rgb(63, 68, 19);
+    border-color: rgb(78, 77, 23);
+    border-width: 25px;
     padding: 5%;
     list-style-type: disc;
+    color: goldenrod;
 }

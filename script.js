@@ -37,11 +37,8 @@ $(document).ready(function() {
             }
         });
     }
-    // //change this to get search term from user text box
-    // var userVideoInput = "warrior pose"
-    // findYogaVideo(userVideoInput);
 
-    //button for yoga pose api data search - this is working! :)
+    //button for yoga pose api data search
     $(".btn-poses").on("click", function() {
         var userSearch = $("#userSearch").val();
         findYogaVideo(userSearch)
@@ -51,7 +48,7 @@ $(document).ready(function() {
         $("#userSearch").val("");
     })
 
-    //pull up user fav poses
+    //Saves user searched poses for future use when clicked
     $(".userFav").on("click", function() {
         var userFavorites = $(this).text();
         findYogaVideo(userFavorites)
@@ -117,9 +114,6 @@ $(document).ready(function() {
             }
         });
     }
-    //commented these sections out becuase jquery button/logic will overwrite these to make the search dynamic instead of hardcode 
-    // var zipcode = "01073"
-    // findStudioNearYou(zipcode);
 
     //button for yoga studio location search w/ zippcode
     $(".btn-zip").on("click", function() {
