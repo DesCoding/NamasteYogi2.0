@@ -30,6 +30,13 @@ GitHub Repo - https://github.com/DesCoding/NamasteYogi2.0
 
 # Project 1 WUSTL Details - DELETE THIS SECTION BEFORE SUBMITTAL:
 
+next steps:   
+        Save poses to "my studio section"
+        fix format yoga page
+        update meditation instructions format
+        finalize powerpoint and presentation
+
+
 ## Application Requirements
 
 Your project should fulfill the following requirements:
