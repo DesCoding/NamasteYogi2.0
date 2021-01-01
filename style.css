@@ -3,9 +3,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
+   
 }
 
+html {
+     background-color: orange;
+}
 
 /* Page specific body tags */
 
@@ -19,7 +23,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     /* background-image: url("./Assets/meditation_background.jpg"); -- Potential alternate background for meditation page */
 }
 
@@ -28,18 +32,18 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.btn-poses {
+/* .btn-poses {
     float: right;
-}
+} */
 
 #userSearch {
     width: 432px;
-    float:right;
+    /* float:right; */
 }
 
-.btn-zip {
+/* .btn-zip {
     float: right;
-}
+} */
 
 #zipSearch {
     width: 432px;

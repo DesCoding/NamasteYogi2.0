@@ -24,6 +24,7 @@ $(document).ready(function() {
     var youTubeAPITera = 'AIzaSyDkn-xiKVHlJxh8LyojlnPzgwutJlly5yY'
 
     function findYogaVideo(userVideoSearch) {
+        $(".posePlaceholder").empty();
         $.ajax({
             url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + userVideoSearch + " yoga" + "&key=" + youTubeAPITera,
             //add iframe to capture API feed of pose video from youtube
@@ -48,6 +49,13 @@ $(document).ready(function() {
         generateButtons(poseArray);
         // Clearing the input field so it is ready for the next search
         $("#userSearch").val("");
+    })
+
+    //pull up user fav poses
+    $(".userFav").on("click", function() {
+        var userFavorites = $(this).text();
+        findYogaVideo(userFavorites)
+        console.log($(this).text());
     })
 
     function savePosesToArray(userSearch) {
@@ -78,7 +86,7 @@ $(document).ready(function() {
         btnGroup.empty();
 
         posesArray.forEach((element) => {
-            var poseBtn = $("<button type='button' class='button is-warning is-light'>");
+            var poseBtn = $("<button type='button' class='button is-warning is-light userFav'>");
             poseBtn.text(element);
             btnGroup.prepend(poseBtn);
             console.log(btnGroup)
