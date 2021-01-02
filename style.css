@@ -1,25 +1,23 @@
 body {
     /* Universal body tag for background images */
-    background-position: center;
+    background-position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh; 
 }
 
 /* Page specific body tags */
-
 #homePage {
-    background-image: url("./Assets/homepage_background.jpg");
+    background: url("./Assets/homepage_background.jpg") no-repeat center center fixed;
 }
 
 #meditationPage,
 #mystudioPage {
     background-image: url("./Assets/mystudio_background.jpg");
-
     /* background-image: url("./Assets/meditation_background.jpg"); -- Potential alternate background for meditation page */
 }
 
-.hero.is-black .html {
+.hero.is-black {
     /* Setting navbar to be partially transparent */
     background-color: rgba(0, 0, 0, 0.8);
 }
