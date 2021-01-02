@@ -19,6 +19,7 @@ Are you busy, stressed...maybe you're just looking for a few zen moments?  Namas
 
 # Deployment
 Deployed Site - https://descoding.github.io/NamasteYogi2.0/
+
 GitHub Repo - https://github.com/DesCoding/NamasteYogi2.0
 
 # Demo
