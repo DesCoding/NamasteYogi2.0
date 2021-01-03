@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     });
 
-//API Keys for youTube - multiple needed due to limit for searches per day
+    //API Keys for youTube - multiple needed due to limit for searches per day
     var youTubeAPI = "AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8"
 
     var youTubeAPI2 = 'AIzaSyB3X71cc_7KgW_lj5Djfybf7PiGT0-LGAw'
@@ -31,7 +31,7 @@ $(document).ready(function() {
             success: function(result) {
                 var poseId = result.items[0].id.videoId;
                 console.log(result)
-                //create iframe el and append variable to grab data and append to my studio dom
+                    //create iframe el and append variable to grab data and append to my studio dom
                 var iframeEl = $("<iframe>").attr("src", "https://www.youtube.com/embed/" + poseId).addClass("videoiFrame")
                 $(".posePlaceholder").prepend(iframeEl)
             }
@@ -50,11 +50,11 @@ $(document).ready(function() {
 
     //Plays saved user searched poses for future use when clicked
     $(".userFav").on("click", function() {
-        var userFavorites = $(this).text();
-        findYogaVideo(userFavorites)
-        console.log($(this).text());
-    })
-    //Saves new searches to array
+            var userFavorites = $(this).text();
+            findYogaVideo(userFavorites)
+            console.log($(this).text());
+        })
+        //Saves new searches to array
     function savePosesToArray(userSearch) {
         console.log("savePosesToArray")
         if (poseArray.includes(userSearch)) {
@@ -90,9 +90,9 @@ $(document).ready(function() {
         $('.userPoses').html(btnGroup)
     };
 
-//Yelp API Key
+    //Yelp API Key
     var yelpLocationAPI = "BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
-//Ajax call to API to find closest yoga studio 
+        //Ajax call to API to find closest yoga studio 
     function findStudioNearYou(location) {
         $.ajax({
             url: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=Yoga Studio&location=' + location + '&sort_by=distance',
@@ -104,7 +104,12 @@ $(document).ready(function() {
                 console.log(result)
                 var yogaBusiness = result.businesses[0].name
                 var yogaBusPhone = result.businesses[0].display_phone
-                var yogaBusAddress = result.businesses[0].location.display_address[0] + "<br>" + result.businesses[0].location.display_address[1]
+                var yogaBusAddress = "";
+                var returnedBusinessInfo = result.businesses[0].location.display_address;
+                // Looping through length of the API results for location dispaly address to return fields
+                for (var i = 0; i < returnedBusinessInfo.length; i++) {
+                    yogaBusAddress += returnedBusinessInfo[i] + "<br>";
+                }
                 $(".zipPlaceholder").removeClass("is-hidden");
                 $(".businessName").html(yogaBusiness);
                 $(".phonenumber").html(yogaBusPhone);
