@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Retreiving items from local storage and assigning it to a variable poseArray
+    // Retreives items from local storage and assigning it to a variable poseArray
     var poseArray = JSON.parse(localStorage.getItem("savedPoses"));
     if (poseArray === null) {
         poseArray = [];
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     });
 
-
+//API Keys for youTube - multiple needed due to limit for searches per day
     var youTubeAPI = "AIzaSyAvSFR7-A7Kzgdxke72C_81WGWueciQj-8"
 
     var youTubeAPI2 = 'AIzaSyB3X71cc_7KgW_lj5Djfybf7PiGT0-LGAw'
@@ -31,7 +31,7 @@ $(document).ready(function() {
             success: function(result) {
                 var poseId = result.items[0].id.videoId;
                 console.log(result)
-                    //create iframe el and append variable to grab data and append to my studio dom
+                //create iframe el and append variable to grab data and append to my studio dom
                 var iframeEl = $("<iframe>").attr("src", "https://www.youtube.com/embed/" + poseId).addClass("videoiFrame")
                 $(".posePlaceholder").prepend(iframeEl)
             }
@@ -44,22 +44,20 @@ $(document).ready(function() {
         findYogaVideo(userSearch)
         savePosesToArray(userSearch);
         generateButtons(poseArray);
-        // Clearing the input field so it is ready for the next search
+        // Clearing the input field so next searched item will show up
         $("#userSearch").val("");
     })
 
-    //Saves user searched poses for future use when clicked
+    //Plays saved user searched poses for future use when clicked
     $(".userFav").on("click", function() {
         var userFavorites = $(this).text();
         findYogaVideo(userFavorites)
         console.log($(this).text());
     })
-
+    //Saves new searches to array
     function savePosesToArray(userSearch) {
         console.log("savePosesToArray")
         if (poseArray.includes(userSearch)) {
-            // DO WE WANT THIS TO REMAIN AS ONLY CONSOLE LOGGING OR DO WE WANT IT SHOWN TO THE USER?
-            console.log("Pose name already selected");
             return;
         } else {
             poseArray.push(userSearch);
@@ -92,9 +90,9 @@ $(document).ready(function() {
         $('.userPoses').html(btnGroup)
     };
 
-
+//Yelp API Key
     var yelpLocationAPI = "BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
-
+//Ajax call to API to find closest yoga studio 
     function findStudioNearYou(location) {
         $.ajax({
             url: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=Yoga Studio&location=' + location + '&sort_by=distance',
@@ -115,7 +113,7 @@ $(document).ready(function() {
         });
     }
 
-    //button for yoga studio location search w/ zippcode
+    //Button for yoga studio location search w/ zippcode
     $(".btn-zip").on("click", function() {
         var zipSearch = $("#zipSearch").val();
         $(".zipPlaceholder").addClass("is-hidden");
