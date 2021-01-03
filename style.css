@@ -3,11 +3,13 @@ body {
     background-position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh; 
+    height: 100vh;
     margin-bottom: auto;
 }
 
+
 /* Page specific body tags */
+
 #homePage {
     background: url("./Assets/homepage_background.jpg") no-repeat center center fixed;
 }
@@ -23,12 +25,11 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-#userSearch, #zipSearch {
+#userSearch,
+#zipSearch {
     /*format width of search bars*/
     width: 432px;
 }
-
 
 .zipPlaceholder {
     /*style the display of locatons pulled into the zipPlaceholder from yelp API*/
@@ -43,8 +44,11 @@ body {
     position: relative;
 }
 
+
 /*styling placeholder that holds poses which are pulled from youTube API*/
-.posePlaceholder, .songPlaceholder {
+
+.posePlaceholder,
+.songPlaceholder {
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -52,7 +56,9 @@ body {
     /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
+
 /* Style the iframe to fit in the container div with full height and width */
+
 .videoiFrame {
     position: absolute;
     top: 0;
@@ -63,7 +69,9 @@ body {
     height: 100%;
 }
 
+
 /* Style the meditation instructions */
+
 .meditation {
     background-color: rgb(3, 3, 2);
     text-emphasis: bold;
