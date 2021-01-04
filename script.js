@@ -94,6 +94,8 @@ $(document).ready(function() {
     var yelpLocationAPI = "BXl-oGLTGuQQ1mZjGZ3mGnAMpz8-Xp_I0dASCnxX0t9wFJNCFyh_M1Gsad-kQT7kXHOomdEt5u3nBTS4lcW7FdaTiqaPw--075rZ9jMLYX_QyVmv18DsYy4CdgncX3Yx"
         // Ajax call to API to find closest yoga studio 
     function findStudioNearYou(location) {
+        $("#ZipError").empty();
+
         $.ajax({
             url: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=Yoga Studio&location=' + location + '&sort_by=distance',
             headers: {
@@ -105,15 +107,29 @@ $(document).ready(function() {
                 var yogaBusiness = result.businesses[0].name
                 var yogaBusPhone = result.businesses[0].display_phone
                 var yogaBusAddress = "";
+
                 var returnedBusinessInfo = result.businesses[0].location.display_address;
                 // Looping through length of the API results for location dispaly address to return fields
                 for (var i = 0; i < returnedBusinessInfo.length; i++) {
                     yogaBusAddress += returnedBusinessInfo[i] + "<br>";
                 }
+
                 $(".zipPlaceholder").removeClass("is-hidden");
                 $(".businessName").html(yogaBusiness);
                 $(".phonenumber").html(yogaBusPhone);
                 $(".address").html(yogaBusAddress);
+            },
+
+            // Complete function added to account for invalid user input or server errors
+            complete: function(completeResult) {
+                console.log(completeResult.status);
+                if (completeResult.status != 200) {
+                    $("#ZipError").html(`<article class="message is-danger mt-6">
+                        <div class="message-body">
+                            ${completeResult.responseJSON.error.code} - Please try your search again.
+                        </div>
+                    </article>`);
+                }
             }
         });
     }
