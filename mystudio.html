@@ -14,7 +14,7 @@
 </head>
 
 <body id="mystudioPage">
-    <section class="hero is-black is-medium">
+    <header class="hero is-black is-medium">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
             <nav class="navbar">
@@ -36,9 +36,9 @@
                 </div>
             </nav>
         </div>
-    </section>
+    </header>
 
-    <div class="container">
+    <main class="container">
         <!-- Columns for Yoga Poses Section -->
         <div class="columns my-6">
             <div class="column">
@@ -56,34 +56,26 @@
                     </div>
                 </div>
                 <!--update w/ youtube API poses-->
-                <div class="posePlaceholder"></div>     
-                
+                <div class="posePlaceholder"></div>
+
                 <div class="column">
                     <div class="field2">
                         <div class="control2">
                             <!--add button and link to on-click for search by zip code-->
                             <input class="input is-warning" type="text" id="zipSearch" placeholder="Enter zipcode to find a studio near you!">
                             <button type="button" class="button btn-zip">Search</button>
-                         </div>
-
+                        </div>
                         <!--update w/ yelp API locations-->
                         <div class="zipPlaceholder is-hidden mt-6">
                             <div class="businessName"></div>
                             <div class="phonenumber"></div>
                             <div class="address"></div>
-                        </div>     
+                        </div>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
-        <!-- Columns for Studio Search Section -->
-        <div class="columns my-6">
-
-        </div>
-    </div>
+    </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
