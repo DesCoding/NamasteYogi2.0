@@ -27,12 +27,12 @@ body {
 
 #userSearch,
 #zipSearch {
-    /*format width of search bars*/
+    /* format width of search bars */
     width: 432px;
 }
 
 .zipPlaceholder {
-    /*style the display of locatons pulled into the zipPlaceholder from yelp API*/
+    /* style the display of locatons pulled into the zipPlaceholder from yelp API */
     background-color: black;
     border: 1px solid goldenrod;
     color: white;
@@ -45,7 +45,7 @@ body {
 }
 
 
-/*styling placeholder that holds poses which are pulled from youTube API*/
+/* styling placeholder that holds poses which are pulled from youTube API */
 
 .posePlaceholder,
 .songPlaceholder {
