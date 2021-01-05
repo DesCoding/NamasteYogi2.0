@@ -48,13 +48,18 @@ $(document).ready(function() {
         $("#userSearch").val("");
     })
 
-    // Plays saved user searched poses for future use when clicked
-    $(".userFav").on("click", function() {
-            var userFavorites = $(this).text();
-            findYogaVideo(userFavorites)
-            console.log($(this).text());
-        })
-        // Saves new searches to array
+    // Plays saved poses when buttons are clicked  
+        var buttonContainer = document.querySelector("div.buttons");
+        buttonContainer.addEventListener("click", function(event) {
+        
+        if (event.target.classList.contains("userFav")){
+           var userFavorites = event.target.innerText;
+           findYogaVideo(userFavorites);
+           console.log(userFavorites)
+        }
+    })
+
+    // Saves new searches to array
     function savePosesToArray(userSearch) {
         console.log("savePosesToArray")
         if (poseArray.includes(userSearch)) {
