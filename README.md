@@ -23,6 +23,7 @@ Deployed Site - https://descoding.github.io/NamasteYogi2.0/
 GitHub Repo - https://github.com/DesCoding/NamasteYogi2.0
 
 # Demo
+
 ![Demo](Assets/NamasteYogi.gif)
 
 ![Demo](Assets/DemoPic.png)
